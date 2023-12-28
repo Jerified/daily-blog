@@ -1,0 +1,28 @@
+import { client } from '@/sanity/lib/client'
+import Link from 'next/link'
+import React from 'react'
+
+const Tags = async() => {
+    const tagsQuery = `*[_type == "tag"] {
+        _id,
+        name
+      }`
+    const data = await client.fetch(tagsQuery)
+    console.log(data);
+    
+  return (
+    <div className="max-4xl mx-auto">
+        <div className='flex flex-wrap gap-3 mt-8 justify-center'>
+            {data.map((tag: any) => {
+                return (
+                    <Link href={tag.name} className='border px-4 py-3 rounded-md bg-[#A6B695]' key={tag.id}>
+                        <h1>{tag.name}</h1>
+                    </Link>
+                )
+            })}
+        </div>
+    </div>
+  )
+}
+
+export default Tags
