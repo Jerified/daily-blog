@@ -2,6 +2,8 @@ import { client } from '@/sanity/lib/client'
 import Image from 'next/image'
 import Tags from '../components/Tags'
 import Headlines from '../components/Headlines'
+import Articles from '../components/Articles'
+
 // import { client } from '@sanity/lib/client'
 
 const getPost = async () => {
@@ -11,33 +13,36 @@ const getPost = async () => {
         slug,
         publishedAt,
         excerpt,
-        // body[],
-        // author-> { // resolve author reference
-        //   _id, 
-        //   name,
-        //   bio
-        // },
-        // tags[]-> {  // resolve tag references
-        //   _id,
-        //   name
-        // }
+        body[],
+        author-> {
+          _id, 
+          name,
+          bio
+        },
+        tags[]-> {
+          _id,
+          name
+        }
       }`
     const data = await client.fetch(query)
     return data
 
 }
-export default async function Home() {
 
+export const revalidate = 1;
+console.log(revalidate)
+
+export default async function Home() {
     const data = await getPost()
     console.log(data)
-    // console.log('hello')
   return (
-    <main className='pt-10'>
-     <div className="text-center ">
+    <main className='max-w-6xl mx-auto pt-10'>
+     <div className="text-center">
         <p className="text-gray-500 font-semibold dark:text-gray-200 ">Welome to Our Blog</p>
-        <h1 className="text-3xl md:text-5xl pt-4 font-bold max-w-2xl mx-auto">Being unique is better than being perfect</h1>
+        <h1 className="text-3xl md:text-5xl pt-4 font-bold max-w-2xl mx-auto">Being <span className='text-[#73AB84]'>unique</span> is better than being <span className='text-[#73AB84]'>perfect</span></h1>
         <Tags />
         <Headlines data={data} />
+        <Articles data={data} />
      </div>
     </main>
   )
