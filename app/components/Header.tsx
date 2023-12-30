@@ -86,10 +86,10 @@ export default function Header() {
                         </svg>
                     </div>
                 </div>
-                <MobileNav
+                {/* <MobileNav
                     sidebarOpen={sidebarOpen}
                     setSidebarOpen={setSidebarOpen}
-                />
+                /> */}
             </div>
 
         </header>

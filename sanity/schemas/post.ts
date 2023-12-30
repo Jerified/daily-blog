@@ -32,30 +32,37 @@ export const post = {
       validation: (Rule: Rule) => Rule.max(200).error("Max 200 characters"),
     },
     {
-      name: "body",
-      title: "Body",
-      type: "array",
-      of: [
-        { type: "block" },
-        {
-            name: 'images',
-            type: 'object',
+        name: 'mainImage', 
+        type: 'url',
+        title: 'Main image',
+        options: {
+            hotspot: true
+        }
+      },
+      {
+        name: "body",
+        title: "Body",
+        type: "array",
+        of: [
+          { name: 'img',type: "block" },
+          {
+            name: "urlImg",
+            type: "object",
             fields: [
-                {
-                    name: 'main', 
-                    type: 'url',
-                    title: 'Main image'
-                  },
-                  {
-                    name: 'additional',
-                    type: 'array', 
-                    of: [{type: 'url'}],
-                    title: 'Additional images'
-                  }
+              {
+                name: "url",
+                type: "url",
+                title: "URL"
+              },
+              {
+                 name: "alt",
+                 type: "string",
+                 title: "Alt Text" 
+              }
             ]
           }
-      ],
-    },
+        ]
+      },
     {
         name: 'author',
         title: 'Author',

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Tags from '../components/Tags'
 import Headlines from '../components/Headlines'
 import Articles from '../components/Articles'
+import RecentPost from '../components/RecentPost'
 
 // import { client } from '@sanity/lib/client'
 
@@ -13,10 +14,12 @@ const getPost = async () => {
         slug,
         publishedAt,
         excerpt,
+        mainImage,
         body[],
         author-> {
           _id, 
           name,
+          authorUrl,
           bio
         },
         tags[]-> {
@@ -43,6 +46,7 @@ export default async function Home() {
         <Tags />
         <Headlines data={data} />
         <Articles data={data} />
+        <RecentPost data={data} />
      </div>
     </main>
   )

@@ -12,10 +12,10 @@ const Tags = async() => {
     
   return (
     <div className="max-w-3xl mx-auto">
-        <div className='flex flex-wrap gap-3 mt-8 justify-center'>
+        <div className='flex flex-wrap gap-5 mt-8 justify-center'>
             {data.map((tag: any) => {
                 return (
-                    <Link href={tag.name} className=' px-4 py-3 rounded-md bg-[#A6B695]' key={tag.id}>
+                    <Link href={tag.name} className=' px-4 py-3 rounded-[13px] border border-gray-300 bg-[#A6B695]' key={tag.id}>
                         <h1>{tag.name}</h1>
                     </Link>
                 )
