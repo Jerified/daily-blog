@@ -15,7 +15,7 @@ const Headlines = ({ data }: any) => (
     <section className="max-w-5xl mx-auto">
         <div className=" mt-8 justify-center">
             <div className="grid grid-cols-2 xl:grid-cols-12 gap-4 lg:gap-6 flex-row">
-                {data.map((post: any, index: number) => {
+                {data.slice(0,4).map((post: any, index: number) => {
                     const mainImage = post
                     console.log(mainImage)
                     return (
