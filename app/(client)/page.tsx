@@ -46,7 +46,7 @@ export default async function Home() {
         <Tags />
         <Headlines data={data} />
         <Articles data={data} />
-        <RecentPost data={data} />
+        <RecentPost />
      </div>
     </main>
   )

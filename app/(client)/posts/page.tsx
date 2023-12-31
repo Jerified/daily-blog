@@ -5,7 +5,7 @@ import { IoCalendarClearOutline } from "react-icons/io5";
 import { RiArrowRightFill } from "react-icons/ri";
 
 const getPost = async () => {
-    const query = `*[_type == "post"] | order(publishedAt desc) [0...6] {
+    const query = `*[_type == "post"] | order(publishedAt desc) {
         _id,
         title, 
         slug,
@@ -37,8 +37,8 @@ const RecentPost = async () => {
     return (
         <section className="max-w-5xl mx-auto pt-12 w-full">
             <div className='flex flex-col items-start'>
-                <h1 className='text-4xl font-bold text-[#73AB84] '>Recent posts</h1>
-                <p className='pt-2 pb-8 dark:text-gray-300'>Dont miss the latest trends</p>
+                <h1 className='text-4xl font-bold pb-4 text-[#73AB84] '>Recent posts</h1>
+                <div className='border-b border-gray-300 my-4 w-full'></div>
                 <div className="pt-6 grid lg:grid-cols-2 gap-8">
                     {data.map((post: any) => {
                         return (
@@ -54,8 +54,6 @@ const RecentPost = async () => {
                     })
                     }
                 </div>
-                <Link href={'/posts'} className="my-10 font-semibold text-sm bg-[#73AB84] rounded-full p-4 flex gap-2 items-center">Show More Post <RiArrowRightFill /></Link>
-                {/* <PostCard data={data} /> */}
             </div>
         </section>
     )
