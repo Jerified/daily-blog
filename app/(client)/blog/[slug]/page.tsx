@@ -45,7 +45,7 @@ const Blog = async ({params}: Params) => {
         <div className="mt-14 mx-auto prose-heading:text-2xl prose-li:list-disc prose-li:text-xl prose-li:leading-7">
             <PortableText value={post?.body} components={portableTextComponents} />
         </div>
-        .
+        
     </main>
   )
 }
@@ -55,7 +55,7 @@ export default Blog
 const portableTextComponents = {
     types: {
         image: ({ value }: any) => (
-            <Image src={urlForImage(value).} alt={value.alt} width={700} height={700} />
+            <Image src='' alt={value.alt} width={700} height={700} />
         )
     }
 }
