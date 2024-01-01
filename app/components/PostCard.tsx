@@ -11,7 +11,7 @@ const PostCard = async ({ data }: any) => {
                 {data.map((post: any) => {
                     console.log(post.author.authorUrl)
                     return (
-                        <div key={post._id} className='lg:h-[25vh] h-[30vh] w-full relative rounded-[0.4rem] overflow-hidden'>
+                        <Link href={`/blog/${post.slug.current}`}  key={post._id} className='lg:h-[25vh] h-[30vh] w-full relative rounded-[0.4rem] overflow-hidden'>
                             <Image
                                 className={`w-full h-full object-cover`}
                                 quality={100}
@@ -33,7 +33,7 @@ const PostCard = async ({ data }: any) => {
                                 </div>
                                 <p className=''>{post.publishedAt}</p>
                                 </div>
-                        </div>
+                        </Link>
                         
                     )
                 })}

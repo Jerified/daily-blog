@@ -15,6 +15,8 @@ const config: Config = {
       xl: '1216px'
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }
 export default config
