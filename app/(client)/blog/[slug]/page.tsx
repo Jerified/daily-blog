@@ -56,7 +56,7 @@ const Blog = async ({ params }: Params) => {
                 </div>
                 {post.publishedAt && <p className="flex items-center gap-1 text-xs dark:text-gray-300"><IoCalendarClearOutline />{new Date(post.publishedAt).toDateString()}</p>}
             </div>
-            <div className="my- mx-auto prose-headings:text-xl prose-headings:text-black prose-headings:font-semibold prose-headings:py-4 prose-li:list-disc prose-li:text-x prose-li:leading-7 prose-a:text-blue-600 prose-img:py-4 overflow-hidden w-full">
+            <div className="my- mx-auto prose-headings:text-xl prose-headings:text-black prose-headings:font-semibold prose-headings:py-4 prose-li:list-disc prose-li:text-x prose-li:leading-7 prose-a:text-blue-600 prose-img:rounded-lg prose-img:overflow-hidden overflow-hidden w-full">
                 <PortableText value={post?.body} components={portableTextComponents} />
             </div>
 
@@ -73,7 +73,7 @@ const portableTextComponents = {
             // console.log(url)
             const { url, alt } = value
             return (
-                <Image src={url} alt={alt} width={700} height={700} className='rounded-lg w-full h-[40vh] object-cover overflow-hidden ' />
+                <Image src={url} alt={alt} width={700} height={700} className='rounded-lg w-full h-[40vh] object-cover overflow-hidden prose-img:py-4' />
             )
         }
     }
