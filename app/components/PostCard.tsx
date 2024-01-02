@@ -7,11 +7,11 @@ const PostCard = async ({ data }: any) => {
 
     return (
         <section className="w-full">
-            <div className='grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4 w-full'>
-                {data.map((post: any) => {
-                    console.log(post.author.authorUrl)
+            <div className='grid gap-8 md:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full'>
+                {data?.map((post: any) => {
+                    // console.log(post.author.authorUrl)
                     return (
-                        <Link href={`/blog/${post.slug.current}`}  key={post._id} className='lg:h-[25vh] h-[30vh] w-full relative rounded-[0.4rem] overflow-hidden'>
+                        <Link href={`/blog/${post.slug.current}`}  key={post._id} className='lg:h-[25vh h-[40vh] w-full relative rounded-[0.4rem] overflow-hidden'>
                             <Image
                                 className={`w-full h-full object-cover`}
                                 quality={100}

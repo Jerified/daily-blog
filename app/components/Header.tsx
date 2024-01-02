@@ -12,14 +12,14 @@ export default function Header() {
     return (
         <header className='py-5'>
             <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-12">
+                <div className="grid grid-cols-12 items-center">
                     <div className="col-span-3">
                         <Link href={'/'}>
-                            <h1 className="">Daily blog</h1>
+                            <h1 className="text-2xl font-bold">Daily<span className='text-[#73AB84] dark:text-[#73AB84]'>BLOG</span></h1>
                         </Link>
 
                     </div>
-                    <nav className="hidden xl:block col-span-6">
+                    <nav className="hidden lg:block col-span-6">
                         <div className=" w-full flex items-center justify-center gap-10">
                             {headerData.map((item: any, index: number) => (
                                 <div key={index}>
@@ -33,17 +33,17 @@ export default function Header() {
                             ))}
                         </div>
                     </nav>
-                    <div className="flex items-center justify-end xl:justify-center gap-10 col-span-9 xl:col-span-3">
+                    <div className="flex items-center justify-end lg:justify-center gap-10 col-span-9 lg:col-span-3">
                         {/* Search Block */}
-                        <div className="bg-base-200 px-4 py-2 rounded-md hidden sm:flex items-center gap-4">
+                        <div className="dark:bg-whit px-4 py-4 rounded-xl hidden sm:fle items-center gap-4">
                             <input
                                 type="text"
-                                className="outline-none text-base-content bg-base-200 w-28 placeholder:font-work"
+                                className="outline-none rounded-lg px-4 dark:bg-white w-36 dark:text-black placeholder:text-xs"
                                 placeholder="Search"
                             />
                             <div>
                                 <svg
-                                    className="cursor-pointer"
+                                    className="cursor-pointer text-2xl dark:text-[#73AB84]"
                                     width="16"
                                     height="16"
                                     viewBox="0 0 16 16"
@@ -69,7 +69,7 @@ export default function Header() {
                         <ToggleThemeBtn />
                         <svg
                             onClick={() => setSidebarOpen(!sidebarOpen)}
-                            className="cursor-pointer w-8 h-8 :hidden text-base-content"
+                            className="cursor-pointer w-8 h-8 lg:hidden text-base-content"
                             width="20"
                             height="20"
                             viewBox="0 0 20 20"
@@ -86,10 +86,10 @@ export default function Header() {
                         </svg>
                     </div>
                 </div>
-                {/* <MobileNav
+                <MobileNav
                     sidebarOpen={sidebarOpen}
                     setSidebarOpen={setSidebarOpen}
-                /> */}
+                />
             </div>
 
         </header>
