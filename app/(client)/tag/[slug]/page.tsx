@@ -36,7 +36,7 @@ const page = async ({ params }: Params) => {
 
     const posts = await client.fetch(query)
     // const posts = await getPostByTag(params.slug)
-    console.log(posts)
+    // console.log(posts)
 
     return (
         <section className="lg:max-w-5xl md:max-w-2x mx-auto w-full">
