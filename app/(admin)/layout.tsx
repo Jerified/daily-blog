@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "../components/Providers";
 import Header from "../components/Header";
-import CmsNavbar from "../components/CmsNavbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <Providers>
         <body className={`${inter.className} px-3 bg-[#DAE3D1] dark:bg-[#575F51] text-[]`}>
-            <CmsNavbar />
+            <Header />
             {children}
         </body>
       </Providers>

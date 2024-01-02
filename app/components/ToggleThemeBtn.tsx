@@ -17,22 +17,24 @@ import React, { useEffect, useState } from "react";
 type Props = {};
 
 export default function ToggleThemeBtn({}: Props) {
-  const { themes, theme, setTheme, forcedTheme, systemTheme, resolvedTheme } = useTheme();
+  const { themes, theme, setTheme, resolvedTheme } = useTheme();
   const [lightMode, setLightMode] = useState(true)
   const [hydrationError, setHydrationError] = useState(false)
 
-  useEffect(() => {
-     if (theme === 'light') {
-        setLightMode(true)
-     } else if (theme === 'dark') {
-        setLightMode(false)
-     }
-  }, [theme])
+//   useEffect(() => {
+//      if (theme === 'light') {
+//         setLightMode(true)
+//      } else if (theme === 'dark') {
+//         setLightMode(false)
+//      }
+//   }, [theme])
 
   // fix hydration error on next-themes
   useEffect(() => {
      setHydrationError(true)
   }, [])
+
+  if(!hydrationError) return null
 
   function toggleTheme() {
     if (resolvedTheme === "dark") {

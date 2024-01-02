@@ -37,7 +37,6 @@ const page = async ({ params }: Params) => {
     const posts = await client.fetch(query)
     // const posts = await getPostByTag(params.slug)
     // console.log(posts)
-    export const revalidate = 1
 
     
     return (
