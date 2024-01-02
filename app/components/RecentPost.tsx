@@ -43,7 +43,7 @@ const RecentPost = async () => {
                     {data.map((post: any) => {
                         return (
                             <div className="flex gap-3 h-full w-full " key={post._id}>
-                                <Image className=' w-[30%] h-[12vh] object-cover rounded-lg overflow-hidden fle' src={post.mainImage} alt={post.alt} width={100} height={100} objectFit='cover' />
+                                <Image className=' w-[30%] h-[12vh] md:h-[18vh] lg:h-[12vh] object-cover rounded-lg overflow-hidden fle' src={post.mainImage} alt={post.alt} width={100} height={100} objectFit='cover' />
                                 <div className='text-start flex flex-col flex-wrap items-start w-[70%]'  >
                                     <Link href={`/blog/${post.slug.current}`} className="text-md md:text-lg font-bold leading-4 md:leading-normal">{post.title}</Link>
                                     <p className="text-xs pt-1 leading-[0.85rem] md:leading-normal sm:text-[0.8rem] dark:text-gray-300">{post.excerpt}</p>

@@ -37,7 +37,9 @@ const page = async ({ params }: Params) => {
     const posts = await client.fetch(query)
     // const posts = await getPostByTag(params.slug)
     // console.log(posts)
+    export const revalidate = 1
 
+    
     return (
         <section className="lg:max-w-5xl md:max-w-2x mx-auto w-full">
             <h1 className='text-4xl font-bold capitalize'>{params?.slug}</h1>

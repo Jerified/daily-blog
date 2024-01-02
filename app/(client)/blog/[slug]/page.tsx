@@ -37,6 +37,8 @@ const getPost = async (slug: string) => {
     return data
 }
 
+
+export const revalidate = 1
 const Blog = async ({ params }: Params) => {
     const post = await getPost(params?.slug)
     console.log(post.body)
@@ -44,9 +46,9 @@ const Blog = async ({ params }: Params) => {
         <main className="max-w-3xl mx-auto">
             <h1 className='text-3xl font-bold mx-aut'>{post.title}</h1>
             <div className="flex gap-4 items-center py-4 ">
-                <div className=' flex gap-2 items-center text-gray-300 text-xs '>
+                <div className=' flex gap-2 items-center text-gray- text-xs '>
                     <Image
-                        className={`xl:h-[3vh h-[3vh object-cover rounded-full overflow-hidden `}
+                        className={` object-cover rounded-full overflow-hidden `}
                         quality={100}
                         src={post.author.authorUrl}
                         width={25}

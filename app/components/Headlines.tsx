@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 // interface Post {
@@ -19,7 +20,7 @@ const Headlines = ({ data }: any) => (
                     const mainImage = post
                     console.log(mainImage)
                     return (
-                        <div key={post._id} className={`${index === 0 && 'xl:col-span-6 xl:row-span-2 xl:h-[calc(50vh+1.5rem)]'} ${index === 1 || index === 2 ? 'xl:col-span-3 xl:h-[25vh]' : ''} ${index === 3 && 'xl:col-span-6 xl:h-[25vh] inline-block '} w-full relative`}>
+                        <Link href={`/blog/${post.slug.current}`} key={post._id} className={`${index === 0 && 'xl:col-span-6 xl:row-span-2 xl:h-[calc(50vh+1.5rem)]'} ${index === 1 || index === 2 ? 'xl:col-span-3 xl:h-[25vh]' : ''} ${index === 3 && 'xl:col-span-6 xl:h-[25vh] inline-block '} w-full relative`}>
                             <Image
                                 className={`w-full rounded-lg h-[40vh] md:h-[40vh] xl:h-full ${index === 3 && 'object-cover'}  ${index === 0 && 'object-cover'} `}
                                 quality={100}
@@ -36,7 +37,7 @@ const Headlines = ({ data }: any) => (
                                 )
                             })}
                             <p className='absolute bottom-4 left-3 font-semibold hover:underline text-xs md:text-sm hover:underline-offset-4 dark:hover:text-gray-300 text-start cursor-pointer'>{post.title}</p>
-                        </div>
+                        </Link>
                     )
                 })}
 
